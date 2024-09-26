@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型工坊 首頁</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="css/MarkerCluster.css">
+    <link rel="stylesheet" href="css/myall.css">
+</head>
+
+<body style="background-color: rgb(145, 145, 145);">
+
+    <!-- S01 Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark sticky-md-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i
+                    class="fa-solid fa-screwdriver-wrench fa-1x me-2 wow animate__animated animate__swing"
+                    data-wow-duration="1s" data-wow-delay="1s" data-wow-iteration="infinite"></i>模型工坊</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">首頁</a>
+                    </li>
+                    <li class="nav-item dropdown ms-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            會員專區
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item disabled lv-100" id="" href="works_list.html">作品列表</a></li>
+                            <li><a class="dropdown-item disabled lv-200" style="cursor: pointer;" id="" data-bs-toggle="modal" data-bs-target="#insert_work">上傳作品</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown ms-2 d-none lv-900" id="">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            管理員專區
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="" href="member-list-table.html">會員管理</a></li>
+                            <li><a class="dropdown-item" id="" href="work-list-table.html">作品管理</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <span class="d-none" id="login_ok">
+                    <span class="h3 text-pink01">會員:<span class="h2 text-bule01 me-2"
+                            id="login_username">OOO</span></span>
+                    <button class="btn btn-outline-info me-2" id="logout_btn">登出</button>
+                </span>
+
+                <button class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal"
+                    id="login_btn">登入</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"
+                    id="register_btn">註冊</button>
+            </div>
+        </div>
+    </nav>
+    <!-- S02 Logo 幻燈片-->
+    <section id="s02">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active bg-cover">
+                    <img src="img/P_20230930_193851.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item bg-cover">
+                    <img src="img/P_20230930_193925.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item bg-cover">
+                    <img src="img/P_20231002_131021.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!-- S03 素組 -->
+    <section id="s03" style="position: relative;">
+        <div class="row">
+            <div class="col-md-5 s03_img bg-cover"
+                style="background-image: url(img/2024-09-17\ 181003.png); position: absolute; top: 0; bottom: 0;">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end my-3">
+                <div class="col-md-7 s07_text">
+                    <div class="wow animate__animated animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"
+                        data-wow-iteration="1">
+                        <div class="h1">素組（僅組裝，無上色）</div>
+                        <div class="h4">對於剛接觸模型製作的人，素組是一個很好的起點。它不需要額外的上色技巧，可以幫助新手熟悉模型的組裝過程。</div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6 wow animate__animated animate__fadeInBottomLeft" data-wow-duration="1s"
+                            data-wow-delay="0.6s" data-wow-iteration="1">
+                            <div class="h3">優點：</div>
+                            <ul>
+                                <li><span class="h5">簡單快捷：</span>只需要按照說明書組裝，不需要額外的上色技巧和時間。</li>
+                                <li><span class="h5">成本低：</span>不需要購買額外的顏料和工具，節省了經費。</li>
+                                <li><span class="h5">保留原色：</span>模型的原色通常比較均勻，且質感設計上也會考慮到這一點。</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 wow animate__animated animate__fadeInBottomRight" data-wow-duration="1s"
+                            data-wow-delay="0.6s" data-wow-iteration="1">
+                            <div class="h3">缺點：</div>
+                            <ul>
+                                <li><span class="h5">外觀單調：</span>可能缺乏個性化和細節上的豐富感，看起來較為平淡。</li>
+                                <li><span class="h5">細節不突出：</span>某些細節可能因為沒有上色而不容易被察覺或突出。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>近年來模型製作技術越來越精進，有許多模型即使不上色也可呈現足夠的欣賞效果，但還是有少數需要自行上色、分色才能呈現好的效果。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- S04 上色 -->
+    <section id="s04" style="position: relative;">
+        <div class="container">
+            <div class="row justify-content-start my-3">
+                <div class="col-md-7 s07_text">
+                    <div class="wow animate__animated animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"
+                        data-wow-iteration="1">
+                        <div class="h1">上色（將零件分別上色後再進行組裝）</div>
+                        <div class="h4">對於已經掌握了基本組裝技巧的人，可以通過上色進一步提升模型的外觀，使其更接近實物或具體角色的外觀。</div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6 wow animate__animated animate__fadeInBottomLeft" data-wow-duration="1s"
+                            data-wow-delay="0.6s" data-wow-iteration="1">
+                            <div class="h3">優點：</div>
+                            <ul>
+                                <li><span class="h5">個性化：</span>可以根據自己的喜好上色，打造獨特的外觀。</li>
+                                <li><span class="h5">細節突出：</span>上色可以強調模型的細節，讓模型看起來更逼真和立體。
+                                </li>
+                                <li><span class="h5">藝術性：</span>上色過程能展現個人的藝術才華和技巧。</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 wow animate__animated animate__fadeInBottomRight" data-wow-duration="1s"
+                            data-wow-delay="0.6s" data-wow-iteration="1">
+                            <div class="h3">缺點：</div>
+                            <ul>
+                                <li><span class="h5">需要技巧：</span>上色需要一定的技巧和經驗，對初學者來說可能比較困難。</li>
+                                <li><span class="h5">耗時費力：</span>上色過程較為繁瑣，需要更多的時間和精力。</li>
+                                <li><span class="h5">成本較高：</span>需要購買顏料、畫筆等工具，增加了成本。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="div">無論是尋求個性化、自訂化的愛好者，還是希望展示模型真實感的人，上色都可以提供更多的創作空間和展示效果。</div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-md-5 s04_img bg-cover"
+                style="background-image: url(img/2024-09-17\ 181145.png); position: absolute; top: 0; bottom: 0;">
+            </div>
+        </div>
+    </section>
+    <!-- S05 成品介紹 -->
+    <section id="s05">
+        <div class="container">
+            <div class="row vh-100">
+                <div class="col-md-8 bg-cover roller-out" style="background-image: url(img/P_20240917_192333.jpg);">
+                    <div class="roller-self" id="roller"><button class="btn btn-success me-2" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">登入</button>或
+                        <button class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">註冊</button>看更多
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row d-flex flex-column h-100">
+                        <div class="bg-cover" style="background-image: url(img/2024-09-17\ 190838.png); height: 33.3%;">
+                        </div>
+                        <div class="bg-cover" style="background-image: url(img/2024-09-17\ 191301.png); height: 33.3%;">
+                        </div>
+                        <div class="bg-cover" style="background-image: url(img/P_20240214_144718.jpg); height: 33.3%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- S06 地圖資訊 -->
+    <section id="s06">
+        <div class="container">
+            <div class="row vh-100">
+                <div class="col-md-3">
+                    <ul class="list-group list-group " id="store_list" style="height: 80vh; overflow: scroll;">
+                        <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center my-1"
+                            style="cursor: pointer; " onclick="move_to_there(24.1394289,120.674821,1)">
+                            <div>
+                                <div class="h3">精準模型玩具店</div>
+                                <div class="h4">地址:403台中市西區民生路69號</div>
+                                <div class="h4">電話:0422248417</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center my-1"
+                            style="cursor: pointer; " onclick="move_to_there(24.1362496,120.6519909,2)">
+                            <div>
+                                <div class="h3">卡比戰士玩具模型屋</div>
+                                <div class="h4">地址:408台中市南屯區南屯路二段130號</div>
+                                <div class="h4">電話:0424752297</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center my-1"
+                            style="cursor: pointer; " onclick="move_to_there(24.1628648,120.6932367,3)">
+                            <div>
+                                <div class="h3">創造力模型</div>
+                                <div class="h4">地址:406台中市北屯區北屯路70-1號</div>
+                                <div class="h4">電話:0422339418</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center my-1"
+                            style="cursor: pointer; " onclick="move_to_there(24.1533403,120.649999,4)">
+                            <div>
+                                <div class="h3">宏富玩具</div>
+                                <div class="h4">地址:408台中市南屯區大墩路730號</div>
+                                <div class="h4">電話:0423282223</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center my-1"
+                            style="cursor: pointer;" onclick="move_to_there(24.1734775,120.6775299,5)">
+                            <div>
+                                <div class="h3">玩具e哥台中文心店</div>
+                                <div class="h4">地址:406台中市北屯區文心路四段225號</div>
+                                <div class="h4">電話:0437076188</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="map" class="" style="height: 80vh;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <section>
+        <div class="bg-bule01 text-center mt-2 fw-900">Made By 雲端技術應用2024第一期 No.11</div>
+    </section>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- loginModal 會員登入-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-green01">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-2">
+                        <label for="loginModal_userName" class="form-label">帳號</label>
+                        <input type="text" name="loginModal_userName" id="loginModal_userName" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <label for="loginModal_password" class="form-label">密碼</label>
+                        <input type="password" name="loginModal_password" id="loginModal_password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="loginModal_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- registerModal 會員註冊-->
+    <div class="modal fade modal-xl" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-bule01">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row ">
+                        <div class="col-6">
+                            <div class="row d-flex flex-column h-100" style="height: auto;">
+                                <div class="col-12">
+                                    <div class="h3 text-center">同意條款</div>
+                                    <p>本網站（以下稱“本網站”）由我們提供，使用本網站即表示您同意遵守以下條款。請仔細閱讀這些條款。如果您不同意這些條款，請勿使用本網站。</p>
+                                    <p>
+                                    <div class="h5">使用條件：</div>
+                                    您同意僅為合法目的使用本網站，並且遵守所有適用的法律和規範。您不得使用本網站從事任何非法、詐騙或侵害他人權益的行為。</p>
+                                    <p>
+                                    <div class="h5">知識產權：</div>
+                                    本網站及其內容，包括但不限於文本、圖像、商標和軟件，均受版權和其他知識產權法律保護。未經我們明確書面同意，您不得複製、修改或分發這些內容</p>
+                                    <p>
+                                    <div class="h5">責任限制：</div>我們不對因使用本網站而引起的任何直接或間接損害負責。網站內容僅供參考，並可能會隨時變更或更新。</p>
+                                    <p>
+                                    <div class="h5">鏈接到其他網站：</div>
+                                    本網站可能包含指向其他網站的鏈接。這些鏈接僅為方便您而提供，我們對這些外部網站的內容或政策不承擔責任。請在訪問這些網站時自行謹慎。</p>
+                                    <p>
+                                    <div class="h5">數據收集和使用：</div>您的個人信息的收集和使用將按照我們的隱私政策進行。請參閱隱私政策以了解我們如何處理您的數據。</p>
+                                </div>
+                                <div class="col-12 mt-auto">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="r_chk" id="r_chk"
+                                            class="form-check-input  is-invalid">
+                                        <label for="" class="form-check-label">使用本網站即表示您已閱讀、理解並同意上述條款。</label>
+                                        <div class="valid-feedback">同意遵守條款</div>
+                                        <div class="invalid-feedback">請勾選同意</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-2">
+                                <label for="r_userName" class="form-label">帳號</label>
+                                <input type="text" name="r_userName" id="r_userName" class="form-control is-invalid"
+                                    placeholder="3~8個字">
+                                <div class="valid-feedback" id="r_user_val"></div>
+                                <div class="invalid-feedback" id="r_user_inval">不符合長度</div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="r_password" class="form-label">密碼</label>
+                                <input type="password" name="r_password" id="r_password" class="form-control is-invalid"
+                                    placeholder="3~8個字">
+                                <div class="valid-feedback">符合</div>
+                                <div class="invalid-feedback">不符合</div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="r_re_password" class="form-label">確認密碼</label>
+                                <input type="password" name="r_re_password" id="r_re_password"
+                                    class="form-control is-invalid" placeholder="再次輸入相同密碼">
+                                <div class="valid-feedback">密碼相同</div>
+                                <div class="invalid-feedback">密碼不同</div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="r_re_name" class="form-label">姓名</label>
+                                <input type="text" name="r_re_name" id="r_re_name" class="form-control is-invalid"
+                                    placeholder="請輸入您的全名">
+                                <div class="invalid-feedback">不符合</div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="">居住地</div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <select name="region" id="region" class="form-select is-invalid">
+                                            <option value="" selected disabled>--請選擇縣市--</option>
+                                        </select>
+                                        <div class="invalid-feedback">請選擇縣市</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <select name="town" id="town" class="form-select is-invalid">
+                                            <option value="" selected disabled>--請選擇鄉鎮區--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="valid-feedback">符合</div>
+                                <div class="invalid-feedback">不符合</div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="r_phone" class="form-label">電話</label>
+                                <input type="text" name="r_phone" id="r_phone" class="form-control is-invalid"
+                                    placeholder="請輸入手機號碼 ex: 0912345678">
+                                <div class="valid-feedback">符合</div>
+                                <div class="invalid-feedback">不符合</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="r_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 新增作品 ====================================================================================================================-->
+    <div class="modal fade" id="insert_work" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-green01">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">新增作品資料</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card shadow-lg my-3">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="r_workName" class="form-label">作品名</label>
+                                <input type="text" name="r_workName" id="r_workName" class="form-control is-invalid"
+                                    placeholder="請輸入作品名稱">
+                                <div class="invalid-feedback">內容不得為空白</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="r_workType" class="form-label">類型</label>
+                                <input type="text" name="r_workType" id="r_workType" class="form-control is-invalid"
+                                    placeholder="請輸入作品類型">
+                                <div class="invalid-feedback">內容不得為空白</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="r_workRemark" class="form-label">註解</label>
+                                <input type="text" name="r_workRemark" id="r_workRemark" class="form-control is-invalid"
+                                    placeholder="請輸入作品描述">
+                                <div class="invalid-feedback">內容不得為空白</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">檔案上傳</label>
+                                <input type="file" id="file" name="file" class="form-control" placeholder="最多5張圖"
+                                    multiple>
+                            </div>
+                            <div id="prevImg">
+                                <!-- <img src="upload/20240910070400_03.png" alt="" class="mt-3" style="width: 200px;"> -->
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-primary" id="insert_btn">確認新增</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    <script>
+        var CityCountyData = [];
+        var flag_r_username = false, flag_r_pwd = false, flag_r_repwd = false, flag_r_name = false, flag_region = false, flag_town = false, flag_r_chk = false;
+        var insert_photo = false, insert_wname = false, insert_type = false, insert_remark = false;
+        var map, markers = {};
+
+        $(function () {
+            // 產生地圖 
+            map = L.map("map").setView([24.1394289, 120.674821], 17);
+
+            L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution:
+                    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(map);
+
+            markers = {
+                '1': L.marker([24.1394289, 120.674821]).addTo(map).bindPopup('<div class="card"><div class="card-body"><div>精準模型玩具店</div><div>地址:403台中市西區民生路69號</div><div>電話:0422248417</div></div></div>'),
+                '2': L.marker([24.1362496, 120.6519909]).addTo(map).bindPopup('<div class="card"><div class="card-body"><div>卡比戰士玩具模型屋</div><div>地址:408台中市南屯區南屯路二段130號</div><div>電話:0424752297</div></div></div>'),
+                '3': L.marker([24.1628648, 120.6932367]).addTo(map).bindPopup('<div class="card"><div class="card-body"><div>創造力模型</div><div>地址:406台中市北屯區北屯路70-1號</div><div>電話:0422339418</div></div></div>'),
+                '4': L.marker([24.1533403, 120.649999]).addTo(map).bindPopup('<div class="card"><div class="card-body"><div>宏富玩具</div><div>地址:408台中市南屯區大墩路730號</div><div>電話:0423282223</div></div></div>'),
+                '5': L.marker([24.1734775, 120.6775299]).addTo(map).bindPopup('<div class="card"><div class="card-body"><div>玩具e哥台中文心店</div><div>地址:406台中市北屯區文心路四段225號</div><div>電話:0437076188</div></div></div>')
+            };
+
+            //確認uid是否存在以及是否合法
+            if (getCookie("uid01") != "") {
+                var dataJSON = {};
+                dataJSON["uid01"] = getCookie("uid01");
+                //console.log(JSON.stringify(dataJSON));
+
+                $.ajax({
+                    type: "POST",
+                    url: "API/member-checkUid-api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function () {
+                        alert("error-member-checkUid-api.php");
+                    }
+                });
+            }
+
+            //取得縣鄉鎮資料
+            $.ajax({
+                type: "GET",
+                url: "js/CityCountyData.json",
+                dataType: "JSON",
+                async: false,
+                success: function (data) {
+                    CityCountyData = data;
+                },
+                error: function () {
+                    alert("error-js/CityCountyData.json");
+                }
+            });
+
+            //產生縣市選單
+            $("#region").empty();
+            $("#region").append('<option value="" class="text-center" disabled selected>--請選擇縣市--</option>');
+            CityCountyData.forEach(function (item) {
+                $("#region").append('<option value="' + item.CityName + '" class="text-center">' + item.CityName + '</option>');
+            });
+
+            //選完縣市之後 產生所選縣市的鄉鎮區選單
+            $("#region").change(function () {
+                // console.log($(this).val());
+                citySeleted = $(this).val();
+                $("#town").empty();
+                $("#town").append('<option value="" class="text-center" disabled selected>--請選擇鄉鎮區--</option>');
+                CityCountyData.forEach(function (item) {
+                    if (item.CityName == citySeleted) {
+                        //console.log(item);
+                        item.AreaList.forEach(function (item) {
+                            $("#town").append('<option value="' + item.AreaName + '" class="text-center">' + item.AreaName + '</option>');
+                        });
+                    }
+                });
+            });
+
+            //會員登入及登出==================================================================================================================     
+            //監聽登入按鈕
+            $("#loginModal_ok_btn").click(function () {
+                if ($("#loginModal_userName").val() != "" && $("#loginModal_password").val() != "") {
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#loginModal_userName").val();
+                    dataJSON["password"] = $("#loginModal_password").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "API/member-login-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_login,
+                        error: function () {
+                            Swal.fire('error-member-login-api.php');
+                        }
+                    });
+                } else {
+                    Swal.fire('登入失敗!');
+                }
+            });
+
+            //監聽登出按鈕
+            $("#logout_btn").click(function () {
+                setCookie("uid01", "", 7);
+                history.go(0);
+            });
+
+
+            //*****************************註冊會員*********************************************************=====================================================================
+            //監聽註冊帳號
+            $("#r_userName").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    var dataJSON = {};
+                    dataJSON["username"] = $(this).val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "API/member-register-checkAccount-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_checkuni,
+                        error: function () {
+                            alert("error-member-register-checkuni-api.php");
+                        }
+                    });
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $("#r_user_val").html("");
+                    $("#r_user_inval").html("");
+                    $("#r_user_inval").html("不符合長度");
+                    flag_r_username = false;
+                }
+            });
+
+            //監聽註冊密碼
+            $("#r_password").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    if ($(this).val() == $("#r_re_password").val()) {
+                        $("#r_re_password").removeClass("is-invalid");
+                        $("#r_re_password").addClass("is-valid");
+                        flag_r_repwd = true;
+                    } else {
+                        $("#r_re_password").removeClass("is-valid");
+                        $("#r_re_password").addClass("is-invalid");
+                        flag_r_repwd = false;
+                    }
+                    flag_r_pwd = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_r_pwd = false;
+                }
+            });
+
+            //監聽註冊確認密碼
+            $("#r_re_password").bind("input propertychange", function () {
+                if ($(this).val() == $("#r_password").val()) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_r_repwd = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_r_repwd = false;
+                }
+            });
+
+            //監聽註冊姓名
+            $("#r_re_name").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_r_name = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_r_name = false;
+                }
+            });
+
+            //監聽註冊縣市
+            $("#region").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $("#town").removeClass("is-valid");
+                    $("#town").addClass("is-invalid");
+                    flag_region = true;
+                    flag_town = false;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_region = false;
+                }
+            });
+
+            //監聽註冊鄉鎮區
+            $("#town").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_town = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_town = false;
+                }
+            });
+
+            //監聽註冊手機
+            $("#r_phone").bind("input propertychange", function () {
+                const rulesPhone = /^09\d{8}$/;
+                if (rulesPhone.test($(this).val())) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_r_phone = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_r_phone = false;
+                }
+            });
+
+            //監聽同意條款
+            $("#r_chk").change(function () {
+                if ($(this).is(':checked')) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_r_chk = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_r_chk = false;
+                }
+            });
+
+            //監聽註冊確認按鈕
+            $("#r_ok_btn").click(function () {
+                if (flag_r_username && flag_r_pwd && flag_r_repwd && flag_r_name && flag_region && flag_town && flag_r_chk) {
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#r_userName").val();
+                    dataJSON["password"] = $("#r_password").val();
+                    dataJSON["name"] = $("#r_re_name").val();
+                    dataJSON["region"] = $("#region").val();
+                    dataJSON["town"] = $("#town").val();
+                    dataJSON["tel"] = $("#r_phone").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "API/member-register-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_register,
+                        error: function () {
+                            Swal.fire('error-member-register-api.php');
+                        }
+                    });
+                } else {
+                    Swal.fire("欄位輸入錯誤請修正");
+                }
+            });
+
+            // ==============監聽modal新增作品=================================================================================================
+            //監聽新增作品名
+            $("#r_workName").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    insert_wname = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid")
+                    insert_wname = false;
+                }
+            });
+            //監聽新增作品類型
+            $("#r_workType").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    insert_type = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid")
+                    insert_type = false;
+                }
+            });
+            //監聽新增作品備註
+            $("#r_workRemark").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    insert_remark = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid")
+                    insert_remark = false;
+                }
+            });
+
+            //監聽新增作品圖片上傳
+            $("#file").change(function () {
+                //清空預覽圖
+                $("#prevImg").empty();
+                //判斷上傳的圖檔數量
+                if (file.files.length > 0 && file.files.length < 6) {
+                    //for迴圈判斷上傳的檔案類型 & 顯示預覽圖
+                    for (var i = 0; i < file.files.length; i++) {
+                        if (file.files[i].type == "image/png" || file.files[i].type == "image/jpeg") {
+                            imgSrc = URL.createObjectURL(file.files[i]);
+                            imgHTML = '<img src="' + imgSrc + '" alt="" class="w-25 mt-3 img-fluid" style="width: 100px;">';
+                            $("#prevImg").append(imgHTML);
+                            insert_photo = true;
+                        } else {
+                            Swal.fire("第" + (i + 1) + "個檔案不符合格式 png jpeg");
+                            insert_photo = false;
+                        }
+                    }
+                } else if (file.files.length == 0) {
+                    Swal.fire("請至少選擇1張圖片");
+                    insert_photo = false;
+                } else {
+                    Swal.fire("最多5張圖片");
+                    insert_photo = false;
+                }
+            });
+
+            //監聽確認新增按鈕
+            $("#insert_btn").click(function () {
+                if (insert_photo && insert_wname && insert_type && insert_remark) {
+                    var formData = new FormData();
+                    formData.append('workName', $("#r_workName").val());
+                    formData.append('type', $("#r_workType").val());
+                    formData.append('remark', $("#r_workRemark").val());
+                    for (var i = 0; i < file.files['length']; i++) {
+                        formFile = file.files[i];
+                        formData.append('file[]', formFile);
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: "API/insert-work-API.php",
+                        dataType: "json",
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: showdata_insert,
+                        error: function () {
+                            alert("error-insert-work-API.php");
+                        }
+                    });
+                } else {
+                    Swal.fire("欄位有誤請修正");
+                }
+            });
+        });
+
+
+        //w3c school 設定 cookie 的值與取得 cookie 的值****************************************
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        //註冊相關副程式=================================================================================================
+        //帳號確認是否重複
+        function showdata_checkuni(data) {
+            console.log(data);
+            if (data.state) {
+                $("#r_userName").removeClass("is-invalid");
+                $("#r_userName").addClass("is-valid");
+                $("#r_user_val").html("");
+                $("#r_user_val").html(data.message);
+                flag_r_username = true;
+            } else {
+                $("#r_userName").removeClass("is-valid");
+                $("#r_userName").addClass("is-invalid");
+                $("#r_user_inval").html("");
+                $("#r_user_inval").html(data.message);
+                flag_r_username = false;
+            }
+        }
+
+        //註冊帳號確認按鈕
+        function showdata_register(data) {
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "home.html";
+                    }
+                });
+            } else {
+                Swal.fire(data.message);
+            }
+        }
+
+        //登入相關副程式===================================================================================
+        //會員登入確認按鈕
+        function showdata_login(data) {
+            console.log(data);
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        //登入帳號啟用中
+                        if (data.data.Active == "1") {
+                            //登入後將loginModal 畫面隱藏(關閉) 並隱藏登入 註冊 按鈕 顯示 登出按鈕 以及登入者帳號
+                            $("#loginModal").modal("hide");
+                            $("#login_ok").removeClass("d-none");
+                            $("#login_username").html(data.data.Username);
+                            $("#login_btn").addClass("d-none");
+                            $("#register_btn").addClass("d-none");
+                            $("#roller").html('<a href="works_list.html"><button class="btn btn-warning">前往作品列表</button></a>');
+                            if (data.data.Level == "100") {
+                                $(".lv-100").removeClass("disabled");
+                            } else if (data.data.Level == "200") {
+                                $(".lv-100").removeClass("disabled");
+                                $(".lv-200").removeClass("disabled");
+                            } else if (data.data.Level == "900") {
+                                $(".lv-100").removeClass("disabled");
+                                $(".lv-200").removeClass("disabled");
+                                $(".lv-900").removeClass("d-none");
+                            }
+
+                        } else {
+                            Swal.fire("帳號已停權，請聯絡管理人員。");
+                            //登入後將loginModal 畫面隱藏(關閉) 並隱藏登入 註冊 按鈕 顯示 登出按鈕 以及登入者帳號
+                            $("#loginModal").modal("hide");
+                            $("#login_ok").removeClass("d-none");
+                            $("#login_username").html(data.data.Username);
+                            $("#login_btn").addClass("d-none");
+                            $("#register_btn").addClass("d-none");
+                        }
+
+                        //將uid01 寫入 cookie
+                        setCookie("uid01", data.data.Uid01, 7);
+                    }
+                });
+            } else {
+                Swal.fire(data.message);
+            }
+        }
+
+        //Uid驗證成功後顯示登入者帳號以及相關欄位
+        function showdata_check_uid(data) {
+            console.log(data);
+            if (data.state) {
+                if (data.data.Active == "1") {
+                    //登入後將loginModal 畫面隱藏(關閉) 並隱藏登入 註冊 按鈕 顯示 登出按鈕 以及登入者帳號
+                    $("#loginModal").modal("hide");
+                    $("#login_ok").removeClass("d-none");
+                    $("#login_username").html(data.data.Username);
+                    $("#login_btn").addClass("d-none");
+                    $("#register_btn").addClass("d-none");
+                    $("#roller").html('<a href="works_list.html"><button class="btn btn-warning">前往作品列表</button></a>');
+                    if (data.data.Level == "100") {
+                        $(".lv-100").removeClass("disabled");
+                    } else if (data.data.Level == "200") {
+                        $(".lv-100").removeClass("disabled");
+                        $(".lv-200").removeClass("disabled");
+                    } else if (data.data.Level == "900") {
+                        $(".lv-100").removeClass("disabled");
+                        $(".lv-200").removeClass("disabled");
+                        $(".lv-900").removeClass("d-none");
+                    }
+
+                } else {
+                    Swal.fire("帳號已停權，請聯絡管理人員。");
+                    //登入後將loginModal 畫面隱藏(關閉) 並隱藏登入 註冊 按鈕 顯示 登出按鈕 以及登入者帳號
+                    $("#loginModal").modal("hide");
+                    $("#login_ok").removeClass("d-none");
+                    $("#login_username").html(data.data.Username);
+                    $("#login_btn").addClass("d-none");
+                    $("#register_btn").addClass("d-none");
+                }
+            }
+        }
+
+        function move_to_there(x, y, i) {
+            map.setZoom(17).flyTo([x, y]);
+            markers[i].openPopup();
+        }
+
+        function showdata_insert(data) {
+            console.log(data);
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `取消`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "work-list-table.html";
+                    }
+                });
+            } else {
+                Swal.fire(data.message);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

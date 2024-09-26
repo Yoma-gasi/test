@@ -1,0 +1,701 @@
+
+
+/*#region Google 字體*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');/*標準繁體*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');/*日文字體*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+body {
+    font-family: "Zen Maru Gothic", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.fw-100{
+    font-weight: 100;
+}
+.fw-200{
+    font-weight: 200;
+}
+.fw-300{
+    font-weight: 300;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-600{
+    font-weight: 600;
+}
+.fw-700{
+    font-weight: 700;
+}
+.fw-800{
+    font-weight: 800;
+}
+.fw-900{
+    font-weight: 900;
+}
+/*#endregion*/
+
+/*#region 色票 */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --CLred: #ff0000;
+    --CLred01: #eb6c71;
+    --CLred02: #c93d4f;
+    --CLred03: #ca0926;
+    --CLred04: #860016;
+    --CLgreen: #00ff00;
+    --CLgreen01: #d1ede1;
+    --CLgreen02: #7bc5ae;
+    --CLgreen03: #018e6b;
+    --CLgreen04: #003e19;
+    --CLbule: #0000ff;
+    --CLbule01: #85b8cb;
+    --CLbule02: #1d6a96;
+    --CLbule03: #034b61;
+    --CLbule04: #023459;
+    --CLyellow: #ffff00;
+    --CLyellow01: #f2dd66;
+    --CLyellow02: #f2ab39;
+    --CLyellow03: #eecb27;
+    --CLyellow04: #f2af1d;
+    --CLorange: #f28500;
+    --CLorange01: #ffb471;
+    --CLorange02: #d66c44;
+    --CLorange03: #fd9735;
+    --CLorange04: #ff6745;
+    --CLpurple: #800080;
+    --CLpurple01: #a299ca;
+    --CLpurple02: #715ca8;
+    --CLpurple03: #742063;
+    --CLpurple04: #3c1832;
+    --CLpink: #ffc0cb;
+    --CLpink01: #fcd3d1;
+    --CLpink02: #fcdff3;
+    --CLpink03: #eb8f90;
+    --CLpink04: #eda2b6;
+}
+
+/*#endregion*/
+
+/*#region 底色*/
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-red {
+    background-color: var(--CLred);
+}
+
+.bg-red01 {
+    background-color: var(--CLred01);
+}
+
+.bg-red02 {
+    background-color: var(--CLred02);
+}
+
+.bg-red03 {
+    background-color: var(--CLred03);
+}
+
+.bg-red04 {
+    background-color: var(--CLred04);
+}
+
+.bg-green {
+    background-color: var(--CLgreen);
+}
+
+.bg-green01 {
+    background-color: var(--CLgreen01);
+}
+
+.bg-green02 {
+    background-color: var(--CLgreen02);
+}
+
+.bg-green03 {
+    background-color: var(--CLgreen03);
+}
+
+.bg-green04 {
+    background-color: var(--CLgreen04);
+}
+
+.bg-bule {
+    background-color: var(--CLbule);
+}
+
+.bg-bule01 {
+    background-color: var(--CLbule01);
+}
+
+.bg-bule02 {
+    background-color: var(--CLbule02);
+}
+
+.bg-bule03 {
+    background-color: var(--CLbule03);
+}
+
+.bg-bule04 {
+    background-color: var(--CLbule04);
+}
+
+.bg-yellow {
+    background-color: var(--CLyellow);
+}
+
+.bg-yellow01 {
+    background-color: var(--CLyellow01);
+}
+
+.bg-yellow02 {
+    background-color: var(--CLyellow02);
+}
+
+.bg-yellow03 {
+    background-color: var(--CLyellow03);
+}
+
+.bg-yellow04 {
+    background-color: var(--CLyellow04);
+}
+
+.bg-orange {
+    background-color: var(--CLorange);
+}
+
+.bg-orange01 {
+    background-color: var(--CLorange01);
+}
+
+.bg-orange02 {
+    background-color: var(--CLorange02);
+}
+
+.bg-orange03 {
+    background-color: var(--CLorange03);
+}
+
+.bg-orange04 {
+    background-color: var(--CLorange04);
+}
+
+.bg-purple {
+    background-color: var(--CLpurple);
+}
+
+.bg-purple01 {
+    background-color: var(--CLpurple01);
+}
+
+.bg-purple02 {
+    background-color: var(--CLpurple02);
+}
+
+.bg-purple03 {
+    background-color: var(--CLpurple03);
+}
+
+.bg-purple04 {
+    background-color: var(--CLpurple04);
+}
+
+.bg-pink {
+    background-color: var(--CLpink);
+}
+
+.bg-pink01 {
+    background-color: var(--CLpink01);
+}
+
+.bg-pink02 {
+    background-color: var(--CLpink02);
+}
+
+.bg-pink03 {
+    background-color: var(--CLpink03);
+}
+
+.bg-pink04 {
+    background-color: var(--CLpink04);
+}
+
+/*#endregion*/
+
+/*#region 文字顏色 */
+.text-black00{
+    color: #000000;
+}
+.text-white {
+    color: var(--white);
+}
+
+.text-red {
+    color: var(--CLred);
+}
+.text-red01 {
+    color: var(--CLred01);
+}
+.text-red02 {
+    color: var(--CLred02);
+}
+.text-red03 {
+    color: var(--CLred03);
+}
+.text-red04 {
+    color: var(--CLred04);
+}
+
+.text-green {
+    color: var(--CLgreen);
+}
+.text-green01 {
+    color: var(--CLgreen01);
+}
+.text-green02 {
+    color: var(--CLgreen02);
+}
+.text-green03 {
+    color: var(--CLgreen03);
+}
+.text-green04 {
+    color: var(--CLgreen04);
+}
+
+.text-bule {
+    color: var(--CLbule);
+}
+.text-bule01 {
+    color: var(--CLbule01);
+}
+.text-bule02 {
+    color: var(--CLbule02);
+}
+.text-bule03 {
+    color: var(--CLbule03);
+}
+.text-bule04 {
+    color: var(--CLbule04);
+}
+.text-orange {
+    color: var(--CLorange);
+}
+.text-orange01 {
+    color: var(--CLorange01);
+}
+.text-orange02 {
+    color: var(--CLorange02);
+}
+.text-orange03 {
+    color: var(--CLorange03);
+}
+.text-orange04 {
+    color: var(--CLorange04);
+}
+
+.text-yellow {
+    color: var(--CLyellow);
+}
+.text-yellow01 {
+    color: var(--CLyellow01);
+}
+.text-yellow02 {
+    color: var(--CLyellow02);
+}
+.text-yellow03 {
+    color: var(--CLyellow03);
+}
+.text-yellow04 {
+    color: var(--CLyellow04);
+}
+.text-pink {
+    color: var(--CLpink);
+}
+.text-pink01 {
+    color: var(--CLpink01);
+}
+.text-pink02 {
+    color: var(--CLpink02);
+}
+.text-pink03 {
+    color: var(--CLpink03);
+}
+.text-pink04 {
+    color: var(--CLpink04);
+}
+.text-pink01 {
+    color: var(--CLpink01);
+}
+.text-pink02 {
+    color: var(--CLpink02);
+}
+.text-pink03 {
+    color: var(--CLpink03);
+}
+.text-pink04 {
+    color: var(--CLpink04);
+}
+.text-purple {
+    color: var(--CLpurple);
+}
+.text-purple01 {
+    color: var(--CLpurple01);
+}
+.text-purple02 {
+    color: var(--CLpurple02);
+}
+.text-purple03 {
+    color: var(--CLpurple03);
+}
+.text-purple04 {
+    color: var(--CLpurple04);
+}
+
+/*#endregion*/
+
+/*#region 文字底色*/
+.text-bg-red{
+    background-color: var(--CLred);
+    text-decoration: none;
+}
+.text-bg-red01{
+    background-color: var(--CLred01);
+}
+.text-bg-red02{
+    background-color: var(--CLred02);
+}
+.text-bg-red03{
+    background-color: var(--CLred03);
+}
+.text-bg-red04{
+    background-color: var(--CLred04);
+}
+.text-bg-bule{
+    background-color: var(--CLbule);
+}
+.text-bg-bule01{
+    background-color: var(--CLbule01);
+    color: #000000;
+}
+.text-bg-bule02{
+    background-color: var(--CLbule02);
+}
+.text-bg-bule03{
+    background-color: var(--CLbule03);
+}
+.text-bg-bule04{
+    background-color: var(--CLbule04);
+}
+.text-bg-green{
+    background-color: var(--CLgreen);
+    color: #000000;
+}
+.text-bg-green01{
+    background-color: var(--CLgreen01);
+    color: #000000;
+}
+.text-bg-green02{
+    background-color: var(--CLgreen02);
+    color: #000000;
+}
+.text-bg-green03{
+    background-color: var(--CLgreen03);
+}
+.text-bg-green04{
+    background-color: var(--CLgreen04);
+}
+.text-bg-green{
+    background-color: var(--CLgreen);
+    color: #000000;
+}
+.text-bg-green01{
+    background-color: var(--CLgreen01);
+    color: #000000;
+}
+.text-bg-green02{
+    background-color: var(--CLgreen02);
+    color: #000000;
+}
+.text-bg-green03{
+    background-color: var(--CLgreen03);
+}
+.text-bg-green04{
+    background-color: var(--CLgreen04);
+}
+.text-bg-yellow{
+    background-color: var(--CLyellow);
+    color: #000000;
+}
+.text-bg-yellow01{
+    background-color: var(--CLyellow01);
+    color: #000000;
+}
+.text-bg-yellow02{
+    background-color: var(--CLyellow02);
+    color: #000000;
+}
+.text-bg-yellow03{
+    background-color: var(--CLyellow03);
+    color: #000000;
+}
+.text-bg-yellow04{
+    background-color: var(--CLyellow04);
+}
+.text-bg-pink{
+    background-color: var(--CLpink);
+    color: #000000;
+}
+.text-bg-pink01{
+    background-color: var(--CLpink01);
+    color: #000000;
+}
+.text-bg-pink02{
+    background-color: var(--CLpink02);
+    color: #000000;
+}
+.text-bg-pink03{
+    background-color: var(--CLpink03);
+    color: #000000;
+}
+.text-bg-pink04{
+    background-color: var(--CLpink04);
+    color: #000000;
+}
+.text-bg-purple{
+    background-color: var(--CLpurple);
+}
+.text-bg-purple01{
+    background-color: var(--CLpurple01);
+    color: #000000;
+}
+.text-bg-purple02{
+    background-color: var(--CLpurple02);
+}
+.text-bg-purple03{
+    background-color: var(--CLpurple03);
+}
+.text-bg-purple04{
+    background-color: var(--CLpurple04);
+    text-decoration: none;
+}
+
+/*#endregion*/
+
+/*#region 按鈕 */
+.btn-01 {
+    padding: 10px;
+    background-color: var(--CLred01);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 2px var(--CLred03);
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.btn-01:hover {
+    background-color: var(--CLred02);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 2px var(--CLred04);
+    font-size: 20px;
+    color: var(--CLgreen03);
+    margin-right: 10px;
+}
+
+.btn-02 {
+    padding: 10px;
+    background-color: var(--CLgreen02);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 2px var(--CLgreen03);
+    margin-right: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--black);
+}
+
+.btn-02:hover {
+    background-color: var(--CLgreen01);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 2px var(--CLgreen04);
+    font-size: 20px;
+    color: var(--CLbule03);
+    margin-right: 10px;
+}
+
+.btn-03 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 20px;
+    background-color: var(--CLyellow01);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 2px var(--CLyellow03);
+    margin-right: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-03:hover {
+    background-color: var(--CLyellow03);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 2px var(--CLyellow04);
+    margin-right: 10px;
+    font-size: 24px;
+    color: var(--CLred04);
+}
+
+/*#endregion*/
+
+/*#region 邊框顏色 */
+.border-white {
+    border: 3px solid var(--white);
+}
+
+.border-red {
+    border: 3px solid var(--CLred02);
+}
+
+.border-bule {
+    border: 3px solid var(--CLbule02);
+}
+
+.border-green {
+    border: 3px solid var(--CLgreen02);
+}
+
+.border-yellow {
+    border: 3px solid var(--CLyellow);
+}
+
+.border-pink {
+    border: 3px solid var(--CLpink04);
+}
+
+.border-purple {
+    border: 3px solid var(--CLpurple);
+}
+
+.border-orange {
+    border: 3px soild var(--CLorange);
+}
+
+/*#endregion*/
+
+/*#region 背景圖設定 */
+.bg-cover {
+    background-position: center center;
+    background-size: cover;
+}
+
+/*#endregion*/
+
+/*#region roller*/
+.roller-out {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.roller-self {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(214, 17, 17, 0.3);
+    top: -100%;
+    left: 0;
+    transition: all 0.5s;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-out:hover .roller-self{
+    top: 0;
+}
+
+/*#endregion*/
+
+/*#region table-rwd*/
+@media screen and (max-width: 768px){
+    .table-rwd thead{
+        display: none;
+    }
+    .table-rwd tbody tr{
+        display: block;
+        margin-top: 15px;
+        border: 5px solid var(--CLpink04);
+    }
+    .table-rwd tbody tr td{
+        display: block;
+        overflow: hidden;
+    }
+    .table-rwd tbody tr td::before{
+        
+        content: attr(data-th)" ";
+        font-weight: bolder;
+        font-size: 20px;
+        color: var(--CLred04);
+        width: 30%;
+        display: block;
+        float: left;
+        text-align: right;
+        padding-right: 15px;
+    }
+    .table-rwd tbody tr td span.table-col{
+        display: block;
+        float: left;
+        width: 70%;
+
+    }
+}
+/*#endregion*/
+
+/*#region timeline*/
+.timeline{
+    position: relative;
+}
+.timeline::before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    top: 1px;
+    bottom: 1px;
+    background-color: #ee6767;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.timeline-point{
+    position: relative;
+}
+.timeline-point::before{
+    position: absolute;
+    content: "";
+    background-color: #f30e0e;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--CLbule);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+}
+.timeline-point:hover::before{
+    width: 20px;
+    height: 20px;
+    background-color: #07be17;
+    border: 3px solid var(--white);
+}
+/*#endregion*/

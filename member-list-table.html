@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員清單管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- S01 Navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark sticky-md-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i
+                        class="fa-solid fa-screwdriver-wrench fa-1x me-2 wow animate__animated animate__swing"
+                        data-wow-duration="1s" data-wow-delay="1s" data-wow-iteration="infinite"></i>模型工坊</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="home.html">首頁</a>
+                        </li>
+                        <li class="nav-item dropdown ms-2">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                會員專區
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item disabled lv-100" id="" href="works_list.html">作品列表</a></li>
+                                <li><a class="dropdown-item disabled lv-200" style="cursor: pointer;" id=""
+                                        data-bs-toggle="modal" data-bs-target="#insert_work">上傳作品</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown ms-2 d-none lv-900" id="">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                管理員專區
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" id="" href="member-list-table.html">會員管理</a></li>
+                                <li><a class="dropdown-item" id="" href="work-list-table.html">作品管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="d-none" id="login_ok">
+                        <span class="h3 text-pink01">會員:<span class="h2 text-bule01 me-2"
+                                id="login_username">OOO</span></span>
+                        <button class="btn btn-outline-info me-2" id="logout_btn">登出</button>
+                    </span>
+
+                    <button class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal"
+                        id="login_btn">登入</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"
+                        id="register_btn">註冊</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="offset-1 col-3 mb-3">
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#memberChart"
+                                    onclick="makeChart()" id="register_btn">會員圖表</button>
+                            </div>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">會員編號</th>
+                                    <th class="text-center">會員帳號</th>
+                                    <th class="text-center">會員姓名</th>
+                                    <th class="text-center">會員電話</th>
+                                    <th class="text-center">居住縣市</th>
+                                    <th class="text-center">居住鄉鎮區</th>
+                                    <th class="text-center">會員等級</th>
+                                    <th class="text-center">啟用/停用</th>
+                                    <th class="text-center">註冊時間</th>
+                                    <th class="text-center">-</th>
+                                </tr>
+                            </thead>
+                            <tbody id="member_list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal ===================================================================================================================================================================== -->
+    <!-- Modal 會員更新-->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-green01">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">修改會員資料</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-2">
+                                <label for="e_userName" class="form-label">帳號</label>
+                                <input type="text" name="e_userName" id="e_userName" class="form-control" disabled
+                                    placeholder="3~8個字">
+                            </div>
+                            <div class="mb-2">
+                                <label for="e_name" class="form-label">姓名</label>
+                                <input type="text" name="e_name" id="e_name" class="form-control is-valid"
+                                    placeholder="請輸入你的全名">
+                            </div>
+                            <div class="mb-2">
+                                <label for="e_tel" class="form-label">電話</label>
+                                <input type="text" name="e_tel" id="e_tel" class="form-control is-valid"
+                                    placeholder="請輸入你的手機">
+                            </div>
+                            <div class="mb-2">
+                                <div class="">居住地</div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <select name="region" id="region" class="form-select is-valid">
+                                            <option value="" selected disabled>--請選擇縣市--</option>
+                                        </select>
+                                        <div class="invalid-feedback">請選擇縣市</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <select name="town" id="town" class="form-select is-valid">
+                                            <option value="" selected disabled>--請選擇鄉鎮區--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="update_btn">確定修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- loginModal 繪製圖表============================================================================================================================== -->
+    <div class="modal fade modal-xl" id="memberChart" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header bg-green01">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-content">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVA SCRIPT======================================================================================================================================================== -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script>
+        var CityCountyData = [], MemberList = [];
+        var regionTitle = [], counter = [], regionData = [];
+        var pageData = [];
+        var mychart;
+        var flag_surname = true, flag_tel = true, flag_region = true, flag_town = true;
+        var u_id;
+        $(function () {
+            //確認uid是否存在以及是否合法
+            if (getCookie("uid01") != "") {
+                var dataJSON = {};
+                dataJSON["uid01"] = getCookie("uid01");
+                //console.log(JSON.stringify(dataJSON));
+
+                $.ajax({
+                    type: "POST",
+                    url: "API/member-checkUid-api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function () {
+                        alert("error-member-checkUid-api.php");
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: ("權限不足，請通知理員"),
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "home.html";
+                    }
+                });
+            }
+
+            //監聽登出按鈕
+            $("#logout_btn").click(function () {
+                setCookie("uid01", "", 7);
+                location.href = "home.html";
+            });
+
+
+            //取得縣鄉鎮資料
+            $.ajax({
+                type: "GET",
+                url: "js/CityCountyData.json",
+                dataType: "JSON",
+                async: false,
+                success: function (data) {
+                    CityCountyData = data;
+                },
+                error: function () {
+                    alert("error-js/CityCountyData.json");
+                }
+            });
+
+            //產生縣市選單
+            $("#region").empty();
+            $("#region").append('<option value="" class="text-center" disabled selected>--請選擇縣市--</option>');
+            CityCountyData.forEach(function (item) {
+                $("#region").append('<option value="' + item.CityName + '" class="text-center">' + item.CityName + '</option>');
+            });
+
+            //選完縣市之後 產生所選縣市的鄉鎮區選單
+            $("#region").change(function () {
+                // console.log($(this).val());
+                citySeleted = $(this).val();
+                $("#town").empty();
+                $("#town").append('<option value="" class="text-center" disabled selected>--請選擇鄉鎮區--</option>');
+                CityCountyData.forEach(function (item) {
+                    if (item.CityName == citySeleted) {
+                        //console.log(item);
+                        item.AreaList.forEach(function (item) {
+                            $("#town").append('<option value="' + item.AreaName + '" class="text-center">' + item.AreaName + '</option>');
+                        });
+                    }
+                });
+            });
+
+
+            //監聽修改會員資料================================================================================================================
+            //監聽修改姓名
+            $("#e_name").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_surname = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_surname = false;
+                }
+            });
+
+            //監聽修改縣市
+            $("#region").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $("#town").removeClass("is-valid");
+                    $("#town").addClass("is-invalid");
+                    flag_region = true;
+                    flag_town = false;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_region = false;
+                }
+            });
+
+            //監聽修改鄉鎮區
+            $("#town").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_town = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_town = false;
+                }
+            });
+
+            //監聽修改手機
+            $("#e_tel").bind("input propertychange", function () {
+                const rulesPhone = /^09\d{8}$/;
+                if (rulesPhone.test($(this).val())) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_tel = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_tel = false;
+                }
+            });
+
+            //監聽修改確認按鈕
+            $("#update_btn").click(function () {
+                if (flag_surname && flag_region && flag_town && flag_tel) {
+                    var dataJSON = {};
+                    dataJSON["id"] = u_id;
+                    dataJSON["name"] = $("#e_name").val();
+                    dataJSON["region"] = $("#region").val();
+                    dataJSON["town"] = $("#town").val();
+                    dataJSON["tel"] = $("#e_tel").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "API/member-update-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_updateMember,
+                        error: function () {
+                            Swal.fire('error-member-update-api.php');
+                        }
+                    });
+                } else {
+                    Swal.fire("欄位輸入錯誤請修正");
+                }
+            });
+
+
+            // 繪製圖表===========================================================================================================
+            mychart = new Chart($("#myChart"), {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        })
+
+
+        //w3c school 設定 cookie 的值與取得 cookie 的值**************************************************************
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //會員資料讀取成功=======================================================================================
+        function showdata_memberList(data) {
+            $("#member_list").empty();
+            MemberList = data.data;
+            MemberList.forEach(function (item) {
+                var myswitch, mylevel;
+
+                // 判斷資料庫內的 State 是否啟用或停用
+                if (item.Active == 1) {
+                    myswitch = '<span class="table-col"><div class="mb-3 form-check form-switch"><input type="checkbox" class="form-check-input" data-id="' + item.ID + '" id="active_switch" name="active_switch" checked><label for="switch01" class="form-check-label text-success">啟用</label></div></span>';
+                } else {
+                    myswitch = '<span class="table-col"><div class="mb-3 form-check form-switch"><input type="checkbox" class="form-check-input" data-id="' + item.ID + '" id="active_switch" name="active_switch"><label for="switch01" class="form-check-label text-danger">停用</label></div></span>';
+                }
+
+                //判斷會員等級
+                if (item.Level == 100) {
+                    mylevel = '<select name="level" id="level" data-id="' + item.ID + '" class="form-select"><option value="100" selected>一般會員</option><option value="200">高級會員</option><option value="900">管理員</option></select>';
+                } else if (item.Level == 200) {
+                    mylevel = '<select name="level" id="level" data-id="' + item.ID + '" class="form-select"><option value="100">一般會員</option><option value="200" selected>高級會員</option><option value="900">管理員</option></select>';
+                } else {
+                    mylevel = '<select name="level" id="level" data-id="' + item.ID + '" class="form-select"><option value="100">一般會員</我option><option value="200">高級會員</option><option value="900" selected>管理員</option></select>';
+                }
+
+                var strHTML = '<tr><td class="text-center align-item-center">' + item.ID + '</td><td class="text-center align-item-center">' + item.Username + '</td><td class="text-center align-item-center">' + item.Surname + '</td><td class="text-center align-item-center">' + item.Tel + '</td><td class="text-center align-item-center">' + item.Region + '</td><td class="text-center align-item-center">' + item.Town + '</td><td class="text-center align-item-center">' + mylevel + '</td><td>' + myswitch + '</td><td class="text-center align-item-center">' + item.CreatedTime + '</td><td class="align-content-center text-center"><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal" data-id="' + item.ID + '" data-username="' + item.Username + '" data-surname="' + item.Surname + '" data-tel="' + item.Tel + '" data-region="' + item.Region + '" data-town="' + item.Town + '" id="edit_btn">修改</button></td></tr>';
+                $("#member_list").append(strHTML);
+            });
+
+            //會員權限監聽
+            $("#member_list #active_switch").change(function () {
+                var act;
+                if ($(this).is(":checked")) {
+                    $(this).next().text("啟用");
+                    $(this).next().addClass("text-success");
+                    $(this).next().removeClass("text-danger");
+                    act = "1";
+                } else {
+                    $(this).next().text("停用");
+                    $(this).next().addClass("text-danger");
+                    $(this).next().removeClass("text-success");
+                    // 直接傳數字0會判斷為空值，加上""讓數字變成字串即可解決。
+                    act = "0";
+                }
+                var dataJSON = {};
+                dataJSON["id"] = $(this).data("id");
+                dataJSON["active"] = act;
+                //console.log(JSON.stringify(dataJSON));
+                $.ajax({
+                    type: "POST",
+                    url: "API/member-update-lv-act-api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_state,
+                    error: function () {
+                        Swal.fire("error-member-update-lv-act-api.php");
+                    }
+                });
+            });
+
+            //會員等級監聽
+            $("#member_list #level").change(function () {
+                var dataJSON = {};
+                dataJSON["id"] = $(this).data("id");
+                dataJSON["level"] = $(this).val();
+                //console.log(JSON.stringify(dataJSON));
+                $.ajax({
+                    type: "POST",
+                    url: "API/member-update-lv-act-api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_state,
+                    error: function () {
+                        Swal.fire("error-member-update-lv-act-api.php");
+                    }
+
+                });
+            });
+
+            $("#member_list #edit_btn").click(function () {
+                u_id = $(this).data("id");
+                $("#e_userName").val($(this).data("username"));
+                $("#e_name").val($(this).data("surname"));
+                $("#e_tel").val($(this).data("tel"));
+                $("#region").val($(this).data("region"));
+                citySeleted = $(this).data("region");
+                CityCountyData.forEach(function (item) {
+                    if (item.CityName == citySeleted) {
+                        //console.log(item);
+                        item.AreaList.forEach(function (item) {
+                            $("#town").append('<option value="' + item.AreaName + '" class="text-center">' + item.AreaName + '</option>');
+                        });
+                    }
+                });
+                $("#town").val($(this).data("town"));
+            });
+        }
+
+        function showdata_updateMember(data) {
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    confirmButtonText: "確認"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "member-list-table.html";
+                    }
+                });
+            } else {
+                Swal.fire(data.message);
+            }
+        }
+
+        function showdata_state(data) {
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    confirmButtonText: "確認"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "member-list-table.html";
+                    }
+                });
+            } else {
+                Swal.fire(data.message);
+            }
+        }
+
+        //檢查uid01判斷是否已經登入以及會員等級
+        function showdata_check_uid(data) {
+            console.log(data);
+            if (data.state) {
+                if (data.data.Active == "1" && data.data.Level == "900") {
+                    //取得會員資料
+                    $.ajax({
+                        type: "GET",
+                        url: "API/member-Read.php",
+                        dataType: "JSON",
+                        success: showdata_memberList,
+                        error: function () {
+                            alert("error-js/CityCountyData.json");
+                        }
+                    });
+                    //登入後將loginModal 畫面隱藏(關閉) 並隱藏登入 註冊 按鈕 顯示 登出按鈕 以及登入者帳號
+                    $("#login_ok").removeClass("d-none");
+                    $("#login_username").html(data.data.Username);
+                    $("#login_btn").addClass("d-none");
+                    $("#register_btn").addClass("d-none");
+
+
+                    if (data.data.Level == "900") {
+                        $(".lv-100").removeClass("disabled");
+                        $(".lv-200").removeClass("disabled");
+                        $(".lv-900").removeClass("d-none");
+                    }
+
+                } else {
+                    Swal.fire({
+                        title: ("權限不足，請通知管理員"),
+                        showDenyButton: false,
+                        showCancelButton: false,
+                        confirmButtonText: "確認",
+                        denyButtonText: `Don't save`
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.href = "home.html";
+                        }
+                    });
+                }
+            }
+        }
+
+        function makeChart() {
+            console.log(MemberList);
+            MemberList.forEach((item, key) => {
+                add = item.Region;
+                if (counter[item.Region] == undefined) {
+                    counter[item.Region] = regionData.length;
+                    regionData.push(new Array());
+                    regionTitle[counter[item.Region]] = item.Region;
+                }
+                regionData[counter[add]].push(item);
+            });
+
+            //清空chartjs
+            mychart.data.labels = [];
+            mychart.data.datasets[0].label = '台灣各縣市會員分布圖';
+            mychart.data.datasets[0].data = [];
+            //加入區域名稱(X軸)和數量(Y軸)
+            regionTitle.forEach(function (item, key) {
+                var srtHtml;
+                mychart.data.labels.push(item);//X軸
+                mychart.data.datasets[0].data.push(regionData[counter[item]].length);//Y軸
+                srtHtml = '<option value="' + item + '" class="">' + item + '</option>';
+                $("#regionList").append(srtHtml);
+            });
+            mychart.update();
+        }
+    </script>
+</body>
+
+</html>
